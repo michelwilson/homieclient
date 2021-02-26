@@ -12,5 +12,11 @@ setup(
     long_description_content_type='text/markdown',
     python_requires='>=3.0',
     platforms='any',
-    install_requires=open('requirements.txt').read().split('\n')
+    install_requires=open('requirements.txt').read().split('\n'),
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+        "Topic :: Home Automation"
+    ]
 )
