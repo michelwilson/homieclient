@@ -2,6 +2,7 @@
 
 [![PyPI version](https://badge.fury.io/py/homieclient.svg)](https://badge.fury.io/py/homieclient)
 [![Build Status](https://travis-ci.com/michelwilson/homieclient.svg?branch=master)](https://travis-ci.com/michelwilson/homieclient)
+[![codecov](https://codecov.io/gh/michelwilson/homieclient/branch/master/graph/badge.svg?token=CNP1YTJ3KZ)](https://codecov.io/gh/michelwilson/homieclient)
 
 This is a very basic implementation of a client for IoT devices following the
 [Homie](https://homieiot.github.io/) MQTT convention. Currently, it only
