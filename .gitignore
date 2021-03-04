@@ -7,3 +7,4 @@ MANIFEST
 .coverage
 cov.xml
 *.egg-info
+build
