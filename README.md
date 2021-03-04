@@ -1,5 +1,8 @@
 # Python Homie client
 
+[![PyPI version](https://badge.fury.io/py/homieclient.svg)](https://badge.fury.io/py/homieclient)
+[![Build Status](https://travis-ci.com/michelwilson/homieclient.svg?branch=master)](https://travis-ci.com/michelwilson/homieclient)
+
 This is a very basic implementation of a client for IoT devices following the
 [Homie](https://homieiot.github.io/) MQTT convention. Currently, it only
 really supports sensor-like devices, i.e., those devices that publish retained
