@@ -19,3 +19,6 @@ install:
 
 script:
     - pytest --cov=src
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
