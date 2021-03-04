@@ -1,0 +1,79 @@
+homie/sensor1/$state ready
+homie/sensor1/$homie 3.0.1
+homie/sensor1/$name Sensor 1
+homie/sensor1/$mac C8:2B:96:29:AF:69
+homie/sensor1/$localip 10.0.0.123
+homie/sensor1/$nodes dht,bmp
+homie/sensor1/$stats uptime
+homie/sensor1/$stats/interval 65
+homie/sensor1/$stats/signal 50
+homie/sensor1/$stats/uptime 468969
+homie/sensor1/$fw/name sens-bmp085-dht22
+homie/sensor1/$fw/version 1.0.4
+homie/sensor1/$fw/checksum 6cc4697728bf2a9c784e8f0b08abc4a6
+homie/sensor1/$implementation esp8266
+homie/sensor1/$implementation/config {"wifi":{"ssid":"mynetwork"},"mqtt":{"host":"10.0.0.1","port":1883,"auth":false},"name":"Sensor 1","ota":{"enabled":true},"device_id":"sensor1"}
+homie/sensor1/$implementation/version 3.0.0
+homie/sensor1/$implementation/ota/enabled true
+homie/sensor1/dht/$name DHT22
+homie/sensor1/dht/$type sensor
+homie/sensor1/dht/$properties temperature,humidity
+homie/sensor1/dht/temperature 20.10
+homie/sensor1/dht/temperature/$name Temperature
+homie/sensor1/dht/temperature/$datatype float
+homie/sensor1/dht/temperature/$unit °C
+homie/sensor1/dht/humidity 63.10
+homie/sensor1/dht/humidity/$name Humidity
+homie/sensor1/dht/humidity/$unit %
+homie/sensor1/dht/humidity/$datatype float
+homie/sensor1/bmp/$name BMP085
+homie/sensor1/bmp/$type sensor
+homie/sensor1/bmp/$properties pressure
+homie/sensor1/bmp/pressure 1021.66
+homie/sensor1/bmp/pressure/$name Pressure
+homie/sensor1/bmp/pressure/$datatype float
+homie/sensor1/bmp/pressure/$unit mbar
+homie/powermeter/$state ready
+homie/powermeter/$homie 3.0.1
+homie/powermeter/$name Power meter
+homie/powermeter/$mac EC:FA:BC:9C:8A:5B
+homie/powermeter/$localip 10.0.0.124
+homie/powermeter/$nodes powermeter
+homie/powermeter/$stats uptime
+homie/powermeter/$stats/interval 65
+homie/powermeter/$stats/signal 64
+homie/powermeter/$stats/uptime 54065
+homie/powermeter/$fw/name homie-powermeter
+homie/powermeter/$fw/version 0.0.1
+homie/powermeter/$fw/checksum bd4b1d4f48ab509b3e9a55f930cd06ab
+homie/powermeter/$implementation esp8266
+homie/powermeter/$implementation/config {"wifi":{"ssid":"mynetwork"},"mqtt":{"host":"10.0.0.1","port":1883,"auth":false},"name":"Power meter","ota":{"enabled":true},"device_id":"powermeter"}
+homie/powermeter/$implementation/version 3.0.0
+homie/powermeter/$implementation/ota/enabled true
+homie/powermeter/$implementation/ota/status 200
+homie/powermeter/powermeter/$name Power meter
+homie/powermeter/powermeter/$type powermeter
+homie/powermeter/powermeter/$properties power_delivered,power_returned
+homie/powermeter/powermeter/power_delivered 370
+homie/powermeter/powermeter/power_delivered/$name Power delivered
+homie/powermeter/powermeter/power_delivered/$datatype integer
+homie/powermeter/powermeter/power_delivered/$unit W
+homie/powermeter/powermeter/power_returned 0
+homie/powermeter/powermeter/power_returned/$name Power returned
+homie/powermeter/powermeter/power_returned/$datatype integer
+homie/powermeter/powermeter/power_returned/$unit W
+homie/powermeter/powermeter/power_delivered 356
+homie/powermeter/powermeter/power_delivered 390
+homie/powermeter/powermeter/power_delivered 410
+homie/powermeter/powermeter/power_returned 1300
+homie/powermeter/powermeter/power_returned 1400
+homie/powermeter/powermeter/power_returned 1500
+homie/sensor1/dht/temperature 20.12
+homie/sensor1/dht/temperature 20.08
+homie/sensor1/dht/temperature 19.82
+homie/sensor1/dht/humidity 63.50
+homie/sensor1/dht/humidity 63.20
+homie/sensor1/dht/humidity 61.90
+homie/sensor1/bmp/pressure 1021.70
+homie/sensor1/bmp/pressure 1021.71
+homie/sensor1/bmp/pressure 1021.69

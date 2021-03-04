@@ -100,11 +100,8 @@ class Node:
         with self._homie_client._callback_mutex:
             if self.device.is_ready() and  \
                     self._homie_client.on_property_updated:
-                try:
-                    self._homie_client.on_property_updated(
-                        self, property, self._get_property(property))
-                except Exception as e:
-                    print(e)
+                self._homie_client.on_property_updated(
+                    self, property, self._get_property(property))
 
     def _get_property(self, property):
         """Format the value of the property as a dict.
@@ -116,20 +113,24 @@ class Node:
         datatype = self._complete_properties[property]['$datatype']
         unit = self._complete_properties[property].get('$unit')
         name = self._complete_properties[property]['$name']
-        raw_value = self._property_values[property]
-        if datatype == 'integer':
-            value = int(raw_value)
-        elif datatype == 'float':
-            value = float(raw_value)
-        elif datatype == 'boolean':
-            if raw_value == 'true':
-                value = True
-            elif raw_value == 'false':
-                value = False
+        raw_value = self._property_values.get(property)
+
+        if raw_value is not None:
+            if datatype == 'integer':
+                value = int(raw_value)
+            elif datatype == 'float':
+                value = float(raw_value)
+            elif datatype == 'boolean':
+                if raw_value == 'true':
+                    value = True
+                elif raw_value == 'false':
+                    value = False
+                else:
+                    value = None
             else:
-                value = None
+                value = raw_value
         else:
-            value = raw_value
+            value = None
 
         return {
             "name": name,

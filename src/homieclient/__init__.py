@@ -129,7 +129,7 @@ class HomieClient:
     def on_connect(self, client, userdata, flags, rc):
         """Handler which is called after the broker connection is
         established."""
-        client.subscribe('homie/#')
+        client.subscribe(f'{self.prefix}/#')
 
     def on_message(self, client, userdata, msg):
         """Handler for processing MQTT messages.

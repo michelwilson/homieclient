@@ -19,7 +19,6 @@ class Device:
         self.attributes = {}
         self._complete_nodes = {}
         self._incomplete_nodes = {}
-        self._initializing = True
 
     def __getattr__(self, name):
         """Get a node or an attribute of this device, based on its id or
@@ -39,22 +38,25 @@ class Device:
     def is_ready(self):
         """True if all nodes have been discovered and the device is
         either ready or in alert (i.e., not sleeping or lost)."""
-        return not self._initializing and (self.state == 'ready' or self.state == 'alert')
+        return not len(self._incomplete_nodes) and (self.state == 'ready' or self.state == 'alert')
 
     def on_message(self, topic, payload):
         """Callback to process MQTT messages and either update the
         relevant node or the attributes of the device."""
         if topic == '$nodes':
-            nodes = payload.split(',')
-            for n in nodes:
-                if n not in self._complete_nodes and n not in self._incomplete_nodes:
-                    self._incomplete_nodes[n] = {}
+            if len(payload.strip()):
+                nodes = payload.split(',')
+                for n in nodes:
+                    if n not in self._complete_nodes and n not in self._incomplete_nodes:
+                        self._incomplete_nodes[n] = {}
+            else:
+                self._incomplete_nodes = {}
 
         elif topic[0] == '$':
             self.attributes[topic] = payload
 
             with self._homie_client._callback_mutex:
-                if not self._initializing and self._homie_client.on_device_updated:
+                if not len(self._incomplete_nodes) and self._homie_client.on_device_updated:
                     self._homie_client.on_device_updated(self, topic, payload)
 
         else:
@@ -87,7 +89,7 @@ class Device:
 
             node._initializing = False
 
-            for topic, payload in data:
+            for topic, payload in data.items():
                 node.on_message(topic, payload)
 
             with self._homie_client._callback_mutex:

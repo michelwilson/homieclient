@@ -1,1 +1,3 @@
-paho-mqtt==1.5.1
+-e .
+pytest==6.2.2
+pytest-cov==2.11.1

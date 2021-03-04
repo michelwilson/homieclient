@@ -4,3 +4,6 @@ venv
 *.pyc
 dist
 MANIFEST
+.coverage
+cov.xml
+*.egg-info
